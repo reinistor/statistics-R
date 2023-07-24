@@ -1,0 +1,525 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\title{Exam}
+\author{Andrei Nistor}
+\date{1/3/2022}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Exam},
+  pdfauthor={Andrei Nistor},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+\#1. North America Rodents. \#\#Dataset data/surveys.csv -rodents
+sightings in North America from 1977 to 2002 \#\#Dataset
+data/species.csv -species acronyms and their Genus
+
+\hypertarget{a-join-the-two-datasets}{%
+\subsection{a) Join the two datasets}\label{a-join-the-two-datasets}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{surveys }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}data/surveys.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## New names:
+## * `` -> ...1
+\end{verbatim}
+
+\begin{verbatim}
+## Rows: 30738 Columns: 10
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (2): species_id, sex
+## dbl (8): ...1, record_id, month, day, year, plot_id, hindfoot_length, weight
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{spec}\NormalTok{(surveys)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## cols(
+##   ...1 = col_double(),
+##   record_id = col_double(),
+##   month = col_double(),
+##   day = col_double(),
+##   year = col_double(),
+##   plot_id = col_double(),
+##   species_id = col_character(),
+##   sex = col_character(),
+##   hindfoot_length = col_double(),
+##   weight = col_double()
+## )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{species }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}data/species.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 54 Columns: 4
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (4): species_id, genus, species, taxa
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{spec}\NormalTok{(species)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## cols(
+##   species_id = col_character(),
+##   genus = col_character(),
+##   species = col_character(),
+##   taxa = col_character()
+## )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rodents }\OtherTok{\textless{}{-}}\NormalTok{ surveys }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{left\_join}\NormalTok{(species, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}species\_id\textquotesingle{}} \OtherTok{=} \StringTok{\textquotesingle{}species\_id\textquotesingle{}}\NormalTok{))}
+\FunctionTok{spec}\NormalTok{(rodents)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## cols(
+##   ...1 = col_double(),
+##   record_id = col_double(),
+##   month = col_double(),
+##   day = col_double(),
+##   year = col_double(),
+##   plot_id = col_double(),
+##   species_id = col_character(),
+##   sex = col_character(),
+##   hindfoot_length = col_double(),
+##   weight = col_double()
+## )
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Present the 5 rodent species having the highest mean weight in a table
+  showing species, mean weight and mean hindfoot length as in the
+  example below.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  mean\_weight }\OtherTok{\textless{}{-}}\FunctionTok{mean}\NormalTok{(surveys}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{weight}\StringTok{\textasciigrave{}}\NormalTok{)  }
+\NormalTok{  mean\_length }\OtherTok{\textless{}{-}}\FunctionTok{mean}\NormalTok{(surveys}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{hindfoot\_length}\StringTok{\textasciigrave{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rodents }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(species) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\StringTok{"Mean Weight [g]"} \OtherTok{=} \FunctionTok{mean}\NormalTok{(weight),}\StringTok{"Mean Hindfoot Length [mm]"}\OtherTok{=}\FunctionTok{mean}\NormalTok{(hindfoot\_length)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{top\_n}\NormalTok{(}\DecValTok{5}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Mean Weight [g]}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Mean Weight [g]}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lrr@{}}
+\toprule
+species & Mean Weight {[}g{]} & Mean Hindfoot Length {[}mm{]} \\
+\midrule
+\endhead
+albigula & 158.72371 & 32.25048 \\
+spectabilis & 120.21668 & 49.99260 \\
+hispidus & 64.84906 & 28.05031 \\
+fulviventer & 59.12500 & 26.70000 \\
+ochrognathus & 55.37500 & 25.60000 \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{c-recreate-the-plot.}{%
+\subsection{c) Recreate the plot.}\label{c-recreate-the-plot.}}
+
+It seems like the plot is a scatter type.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bigrodents}\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(rodents,genus}\SpecialCharTok{==}\StringTok{\textquotesingle{}Dipodomys\textquotesingle{}}\NormalTok{) }
+  \FunctionTok{ggplot}\NormalTok{( }\AttributeTok{data =}\NormalTok{ bigrodents) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{mapping=}\FunctionTok{aes}\NormalTok{( }\AttributeTok{x =}\NormalTok{ weight, }\AttributeTok{y =}\NormalTok{ hindfoot\_length, }\AttributeTok{color =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Dipodomys  Kangaroo Rats\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{subtitle =}\StringTok{\textquotesingle{}Caught in years 1980−1989\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{\textquotesingle{}Hindfoot Length [mm]\textquotesingle{}}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{\textquotesingle{}Weight [g]\textquotesingle{}}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{xlim}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{50}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{150}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 4346 rows containing missing values (geom_point).
+\end{verbatim}
+
+\includegraphics{ANDREI_NISTOR_STATISTICS_EXAM--1-_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  Describe the plot. First of all,the plot illustrates the size of the
+  rodents from the genus Dipodomys, specifically their weight and
+  hindfoot length. The first thing I noticed when analyzing the dataset
+  was that those rodents are mainly the ones that are bigger in size
+  than rodents from other genus, with spectabilis being the heaviest
+  reaching even above 150g, at almost 200g, and with a hindfoot length
+  close to 60 mm. Furthermore, this result gives an insight into why
+  they were named like that ,thanks to their spectacular sizes.
+  Although, the ordii and the merriami are smaller sometimes they can
+  reach a hindfoot length closer to the spectabilis even though they
+  might be 3 times lighter in weight. For example, in the dataset we can
+  see the longest hindfoot recorded was that of an ordii with 64 mm.
+  Based on my assesment of the dataset, I can confidently say that the
+  Dipodomys are mainly the bigger rodents , along with albigula from the
+  Neotoma genus, which seems to be the heaviest rodent, but lacks the
+  hindfoot length of the Dipodomys genus. Thus, from our dataset we can
+  conclude that the Dipodomys are the rodents with the longest hindfoot
+  length.
+\item
+  Kangaroo Rats (genus Dipodomys) are small rodents moving similarily to
+  kangaroos using jumping.steps. Is the mean male hindfoot length
+  different between ordii and merriami species? Comment on the results
+\end{enumerate}
+
+Analyzing the dataset , I noticed that the biggest hind foot recorder
+was by a female ordii with 64mm, which is very impressive compared to
+her lighter build of 35g . It seems like the male merriami does not go
+above 40 mm in hind foot length, while the ordii seem to vary more ,
+with the highest hind foot recorder by a male being 58 mm.
+
+\#2. Medical students smoking habits
+
+A study was conducted on various Medical Universities within Germany and
+Hungary. The students were asked about their smoking habits. 2883
+students took part, 44\% of them were German, 36\% were Hungarian and
+20\% other nationalities. The table below lists number of students per
+nationality declaring daily smoking habit.
+
+\#\#a) Are the proportions of nationalities within smoking students a
+true representation of proportions of the whole student body? Conduct a
+suitable test to check this hypothesis
+
+-2883 students took part -44\% of them were German, 36\% were Hungarian
+and 20\% other nationalities. -91 germans,78 hungarians, 51
+multinational
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{smoking }\OtherTok{\textless{}{-}} \FunctionTok{tribble}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\StringTok{\textquotesingle{}Nationality\textquotesingle{}}\NormalTok{, }\SpecialCharTok{\textasciitilde{}}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }
+\StringTok{\textquotesingle{}German\textquotesingle{}}\NormalTok{, }\DecValTok{91}\NormalTok{,}
+\StringTok{\textquotesingle{}Hungarian\textquotesingle{}}\NormalTok{, }\DecValTok{78}\NormalTok{,}
+\StringTok{\textquotesingle{}Multinational\textquotesingle{}}\NormalTok{, }\DecValTok{51}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(smoking)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   Nationality       n
+##   <chr>         <dbl>
+## 1 German           91
+## 2 Hungarian        78
+## 3 Multinational    51
+\end{verbatim}
+
+\hypertarget{i-will-start-by-checking-if-i-can-apply-the-central-limit-theorem}{%
+\subsubsection{I will start by checking if i can apply the central limit
+theorem:}\label{i-will-start-by-checking-if-i-can-apply-the-central-limit-theorem}}
+
+-1st condition: if the data is independent.We have to assume the data is
+independent. -2st condition : check if sample size larger than 30. It is
+not so we cannot do CLT.
+
+Making the hypothesis with the help of null hypothesis: H0: There is no
+relation between the percentage of smoking students and the percentage
+of nationalities within the student body. HA: : There is an accurate
+representation of the relation between the smoking students and the
+percentage of nationalities within the student body. This proves that
+smoking habits can be influenced by one's nationality.
+
+Now we have to choose an alpha significance value. I will choose alpha
+signivicant value= 0.05 We can now run the function for the Chi-squared
+test.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{smoking }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{chisq.test}\NormalTok{(.)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Chi-squared test for given probabilities
+## 
+## data:  .
+## X-squared = 11.355, df = 2, p-value = 0.003423
+\end{verbatim}
+
+Since the result states the p value is lower than the significant alpha
+value I picked, I can reject the null hypothesis in favor of the
+alternative. This means that the table is an accurate representation of
+the relation between the smoking students and the percentage of
+nationalities within the student body.
+
+\#3. University salaries -yearly salaries of random 52 academic workers
+at one of the U.S. Universities. -friend has been working there for the
+past 10 years. He achieved his doctorate 12 years ago, and is an
+associate professor in the Geology Department. -He earns \$30.000 a
+year. Is it a fair salary or not?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{salary }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}data/salaries.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 52 Columns: 6
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (3): sx, rk, dg
+## dbl (3): yr, yd, sl
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{spec}\NormalTok{(salary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## cols(
+##   sx = col_character(),
+##   rk = col_character(),
+##   yr = col_double(),
+##   dg = col_character(),
+##   yd = col_double(),
+##   sl = col_double()
+## )
+\end{verbatim}
+
+\hypertarget{a-create-a-model-to-predict-salaries-at-this-university.-tune-it-so-that-it-is-most-statisticaly-significant}{%
+\subsection{a) Create a model to predict salaries at this University.
+Tune it, so that it is most statisticaly
+significant}\label{a-create-a-model-to-predict-salaries-at-this-university.-tune-it-so-that-it-is-most-statisticaly-significant}}
+
+I will create a linear model to predict `Average Salary' using the
+variables in the dataset.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{average\_salary }\OtherTok{\textless{}{-}} \FunctionTok{read\_delim}\NormalTok{(}\StringTok{\textquotesingle{}data/salaries.csv\textquotesingle{}}\NormalTok{, }\AttributeTok{delim =} \StringTok{\textquotesingle{},\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 52 Columns: 6
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (3): sx, rk, dg
+## dbl (3): yr, yd, sl
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+Since there is data about the salaries in the company and we know the
+amount of workers(52) I came up with the following formula to find out
+the average income.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{workers}\OtherTok{\textless{}{-}}\DecValTok{52}
+\end{Highlighting}
+\end{Shaded}
+
+average\_salary=total\_salaries÷workers We calculate the total budget of
+salaries
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(total\_salaries }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(salary}\SpecialCharTok{$}\NormalTok{sl))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1237478
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(average\_salary}\OtherTok{\textless{}{-}}\NormalTok{ total\_salaries }\SpecialCharTok{/}\NormalTok{ workers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 23797.65
+\end{verbatim}
+
+The conclusion is that he earns more than average.
+
+\end{document}

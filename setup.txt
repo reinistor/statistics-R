@@ -1,0 +1,139 @@
+
+#install.packages("tidyverse")
+library(tidyverse)
+
+# ggplot 2
+
+=============================================================================
+EXAM 1
+
+1.a)Recreate the plot below using input data from the file :
+b) Describe the plot
+c) Choose a suitable statistical test and use that to determine whether there is a significant difference in
+the mean number of people sharing the award for Chemistry and the mean number of people sharing
+the award for Peace (for all available years).
+
+2. SDU Admissions in 2019
+a) Show 5 most popular educations at SDU (Popularity = number of applicants/number of places).
+Expected formatting below.
+
+b) A 100 random admitted students were chosen for a survey to find out why they came to study at SDU.
+Chosen group included 72 students from Bachelors education, 10 from Engineering and 18 from Diploma
+Engineering. Conduct a 2-test to check wheter it is a suitable representation of new students body
+(Start with calculation of proportions of places available for students within Bachelors, Engineering
+and Diploma Engineering educations).
+
+3. New Zealand Kiwi
+The data in the files data/kiwi_codes.csv and data/kiwi.csv is the basis for this exercise.
+a) Add species name to the kiwi dataset using data from kiwi_codes.csv. For each species, calculate mean
+female/male weight and height. Present results in the below shown formatting.
+b) Create box plot of Kiwi weight distribution, divided according to species and gender. Describe the
+plot.
+c) Make a linear fit to the weight of Great Spotted Kiwi in relation to it’s height.
+d) Check the assumptions for making linear fit from c). Is there anything you would do different?
+
+
+=============================================================================
+EXAM 2
+ 
+1. same
+
+2. almost same
+
+3. Gummy bears
+A sample of 1.5 kg gummy bears consisting of 669 whole gummy bears was taken from a production line.
+Within that sample, there were 12.4% of strawberry gummy bears, 21.2% raspberry, 14.9% lemon, 15.4%
+orange, 15.5% apple and 20.5% pineapple gummy bears. Conduct a 2-test to check whether it is reasonable,
+based on this sample, to assume equal proportions of the different kinds of gummy bears are being produced.
+
+4.of 2002. Ryanair wants to break into the U.S. market with a new route in between Casper, Nebraska (-) and
+San Francisco, California (SFO). Currently there are no commercial flights from Casper, and due to that
+the city is not included in the database.
+The distance in between two cities is 1200 miles and is expected to have approximately 100 passengers per
+week.
+a) Create a linear model to predict ‘Average Fare’ using ‘Distance’. Evaluate the model and propose a
+price for a ticket in between Casper and San Francisco.
+b) List all variables present in the data set. For each of them mark if you find them suitable as input
+for multiple regression model and explain why. Also, since the price of the ticket might be strongly
+dependend on origin/destination airport, would you limit the data to some entries prior to modeling
+and why?
+c) Create two multiple regression models to predict Average Fare using:
+• Distance, Average Weekly Passengers, Market Share MLA,
+• Distance, Market Share MLA
+Which one is better in your opinion and why? Use chosen model to predict an average fare for new route in
+between Casper and San Francisco.
+
+
+=============================================================================
+EXAM 3
+
+1.same
+
+2.The seatbelt legislation was introduced on 31 January 1983 in the UK. The data was collected for patients
+admitted to ER department of the District General Hospital in Merton and Sutton for the year proceeding
+and succeeding legislation. Random 20% of cases from all collected were used for the experiment:
+• 95 cases for the period 1st of February 1982 - 31st of January 1983
+• 85 cases for the period of 1st of February 1983 - 31st of January 1984.
+The injuries were assessed on the Abbreviated Injury Scale (1-6) and then classified into Injury Severity
+Score - ISS with three levels: ‘No injury’, ‘Mild’ and ‘Moderate’.
+ISS 1982/83 1983/84
+No injury 31 44
+Mild 53 35
+Moderate 11 6
+Do the mandatory seatbelts appear to make a diference? Check whether there is a significant correlation in
+between severity of the injuries and time period the accident occurred.
+
+3. Life expectancy through the years
+What is Life Expectancy around the world like? There are two data sets provided:
+• data/life_expectancy.csv contains information from years 2000-2015 about different countries in the
+world
+• data/country_continent.csv contains information about countries and continents they belong to.
+
+a) Join those two datasets.
+b) Show the country with the highest life expectancy per continent in the year 2008. Present the results
+in descending order in a table formatted like example below:
+The example table presents lowest Life Expectancy countries per continent in 2004.
+Continent Country Life Expectancy
+Europe Russia 64.9
+Oceania Papua New Guinea 59.9
+Americas Haiti 58.7
+Asia Afghanistan 57.0
+Africa Sierra Leone 42.3
+c) Limit the data to year 2010. Which out of following variables are staistically significant in modeling of
+Life Expectancy? Status, Income_composition_of_resources, Alcohol, Percentage_Expenditure, BMI,
+HIV, GDP, Schooling Create a multiple regression model.
+d) Are the conditions for a valid linear fit fulfilled in this case?
+
+
+
+=============================================================================
+EXAM 4
+
+1. same
+
+2. Gender and exam performance.
+The dataset biology.csv contains personal information about students with a ‘Biology’ major.
+a) Join to biology.csv a dataset from the previous exercise - data/students_exam_performance.csv.
+b) Present mean Statistics exam score divided acording to gender in formating shown below:
+gender Mean Mathematics Exam score
+Female 76.94465
+Male 77.27941
+c) Is there a significant correlation between Biology students’ gender and the Math exam grade they’ve
+received? Conduct a 2 − test for independence to check this hypothesis.
+
+3. Cars
+Imagine you live in 1985 in U.S.A. It’s time to buy your first car. You got your choices down to two models:
+Parameter Car no. 1 Car no. 2
+Horsepower 110 140
+Displacement 220 280
+Cylinders 6 8
+year 1977 1973
+Weight 3800 3700
+0-60 mph in seconds 16 12
+Origin America Asia
+Now it’s time to make a decision. You have a dataset data/cars_70s.csv containing multiple cars sold in the
+US.
+a) Use this data set to create and tune a model to predict miles per gallon (MPG). Start with variables:
+Year, Cylinders, Displacement, Horsepower, Weight, Seconds0to60, Origin.
+b) Are the conditions for a valid linear fit fulfilled in this case?
+c) Predict MPG value for both cars. The one with higher MPG value is the one to buy. Which one is it?
